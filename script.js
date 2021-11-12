@@ -2,24 +2,25 @@ const button = document.querySelector('.button')
 
 button.addEventListener('click', () => {
     const figure = document.getElementById('figure')
-    const option = document.querySelectorAll('option')
+    const select = document.getElementById('type-figure').value
     const inputColor = document.getElementById('color')
 
-    option.forEach((item, e) => {
-        e.stopPropagation()
-       if(item.label === 'Square') {
-            figure.classList.add('square')
-            figure.style.background = inputColor.value
-       } else if(item.label === 'Triangle') {
-            figure.classList.remove('square')
-            figure.classList.add('triangle')
-            figure.style.background = inputColor.value
-       } else if(item.label === 'Circle') {
-            figure.classList.remove('triangle')
-            figure.classList.add('circle')
-            figure.style.background = inputColor.value
-    } 
-    })
-    
+    if(select === 'square') {
+        figure.classList.toggle('square')
+        figure.classList.remove('triangle', 'circle')
+        figure.style.background = inputColor.value
+    } else if(select === 'triangle') {
+       
+        figure.classList.remove('square', 'circle')
+        figure.classList.toggle('triangle')
+        figure.style.background = inputColor.value
+    } else if(select === 'circle') {
+        figure.classList.toggle('circle')
+        figure.classList.remove('square', 'triangle')
+        figure.style.background = inputColor.value
+    } else {
+        console.log('black')
+    }
+ 
 
 })
