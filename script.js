@@ -1,26 +1,32 @@
+const section = document.getElementById('type-figure')
 const button = document.querySelector('.button')
+const figure = document.getElementById('figure')
 
-button.addEventListener('click', () => {
-    const figure = document.getElementById('figure')
-    const select = document.getElementById('type-figure').value
-    const inputColor = document.getElementById('color')
+section.addEventListener('click', () => {
 
-    if(select === 'square') {
+
+    if(section.value === 'square') {
         figure.classList.remove('rectangle', 'circle')
         figure.classList.toggle('square')
         
-        figure.style.backgroundColor = inputColor.value
-    } else if(select === 'rectangle') {
+        
+    } else if(section.value === 'rectangle') {
        
         figure.classList.remove('square', 'circle')
         figure.classList.toggle('rectangle')
-        figure.style.backgroundColor = inputColor.value
-    } else if(select === 'circle') {
+        
+    } else if(section.value === 'circle') {
         figure.classList.remove('square', 'rectangle')
         figure.classList.toggle('circle')
         
-        figure.style.backgroundColor = inputColor.value
+       
     } else {
         console.log('black')
     }
+})
+
+button.addEventListener('click', () => {
+    const inputColor = document.getElementById('color')
+
+    figure.style.background = inputColor.value
 })
