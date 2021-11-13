@@ -13,11 +13,7 @@
     margin: 0 auto;
 }
 
-#figure {
-    height: 400px;
-    width: 400px;
-    background: black;
-}
+
 
 .square {
     width: 200px;
@@ -30,11 +26,9 @@
 .triangle {
     width: 0;
     height: 0;
-    background: white;
-    border-left: 100px solid black;
-    border-right: 100px solid black;
-    border-bottom: 200px;
-    margin: 20px;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 200px solid #f95959;
 }
 
 .circle {

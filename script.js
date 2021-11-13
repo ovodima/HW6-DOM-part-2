@@ -6,21 +6,22 @@ button.addEventListener('click', () => {
     const inputColor = document.getElementById('color')
 
     if(select === 'square') {
-        figure.classList.toggle('square')
         figure.classList.remove('triangle', 'circle')
-        figure.style.background = inputColor.value
+        figure.classList.toggle('square')
+        
+        figure.style.backgroundColor = inputColor.value
     } else if(select === 'triangle') {
        
         figure.classList.remove('square', 'circle')
         figure.classList.toggle('triangle')
-        figure.style.background = inputColor.value
+        figure.style.borderBottom = `200px solid ${inputColor.value}`
+        figure.style.backgroundColor = 'white'
     } else if(select === 'circle') {
-        figure.classList.toggle('circle')
         figure.classList.remove('square', 'triangle')
-        figure.style.background = inputColor.value
+        figure.classList.toggle('circle')
+        
+        figure.style.backgroundColor = inputColor.value
     } else {
         console.log('black')
     }
- 
-
 })
